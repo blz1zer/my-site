@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haruzinha 🤍</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(120deg, #5c0000, #000000);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            transform: rotate(45deg);
+            animation: floatDiagonal 10s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -20px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: -20px;
+            top: 0;
+        }
+
+        @keyframes floatDiagonal {
+            0% {
+                transform: translate(0, 0) rotate(45deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-200vw, 200vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        /* Gerar corações em posições aleatórias */
+        .heart:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
+        .heart:nth-child(2) { top: 30%; left: 40%; animation-duration: 14s; }
+        .heart:nth-child(3) { top: 50%; left: 60%; animation-duration: 10s; }
+        .heart:nth-child(4) { top: 70%; left: 80%; animation-duration: 16s; }
+        .heart:nth-child(5) { top: 80%; left: 10%; animation-duration: 11s; }
+        .heart:nth-child(6) { top: 40%; left: 75%; animation-duration: 13s; }
+        .heart:nth-child(7) { top: 15%; left: 85%; animation-duration: 9s; }
+        .heart:nth-child(8) { top: 90%; left: 35%; animation-duration: 15s; }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 500px;
+        }
+
+        .btn-reveal {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #570000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-reveal:hover {
+            background-color: #570000;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    <div class="container">
+        <h1>Mensagem pra haru 🤍</h1>
+        <button class="btn-reveal" onclick="revealMessage()">Abrir a Mensagem</button>
+        <p id="message" class="message">Haruzinha, eu amo MUITO você. Conhecer você foi uma das melhores coisas que já me aconteceu, eu agradeço todos os dias por você ter aparecido na minha vida. Você é uma pessoa que eu não pensava que existia, alguém incrível que tem as mesmas vontades que eu, mesma personalidade que a minha. Eu sou uma pessoa muito só, e a única coisa que alegra meu dia é a sua mensagem, sem você eu ficaria sem chão, você é tudo pra mim. Sei que sou uma pessoa descartável e que no momento não consigo te fazer feliz do jeito que você merece, mas te prometo que um dia tudo ficará bem e eu vou te propocionar muitas coisas boas, então por favor não desista de mim e nem se afaste, eu amo demais você minha lindinha.</p>
+    </div>
+
+    <script>
+        function revealMessage() {
+            const message = document.getElementById("message");
+            message.style.display = "block";
+        }
+    </script>
+</body>
+</html>
